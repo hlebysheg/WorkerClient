@@ -1,0 +1,17 @@
+.center {
+    margin: 1rem auto;
+    display: flex;
+    justify-content: center;
+}
+
+label {
+    display: flex;
+    align-self: center;
+    padding-right: 1rem;
+    justify-content: end;
+}
+
+.form-control {
+    width: 30%;
+    margin: 1rem;
+}

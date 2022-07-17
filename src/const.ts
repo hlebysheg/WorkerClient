@@ -1,0 +1,1 @@
+export const URL_SERV = `https://localhost:7165`

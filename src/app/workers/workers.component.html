@@ -1,0 +1,41 @@
+<div class="center">
+    <label class="">sort type</label>
+    <select [(ngModel)]="orderBy" class="form-control">
+        <option *ngFor="let c of selectVariant" [ngValue]="c.type">{{c.name}}</option>
+    </select>
+
+    <select [(ngModel)]="param" class="form-control">
+        <option *ngFor="let c of paramVariant" [ngValue]="c.type">{{c.name}}</option>
+    </select>
+</div>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col" (click)="nameClick()">fullName</th>
+            <th scope="col" (click)="salaryClick()">salary</th>
+            <th scope="col" (click)="birthClick()">birhtDay</th>
+            <th scope="col" (click)="workDayClick()">start work</th>
+            <th scope="col" (click)="departClick()">depName</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let us of worker | SortPipe: orderBy: param">
+        <tr (dblclick)="update(us)">
+            <th scope="row">{{us.id}}</th>
+            <td>{{us.fullName}}</td>
+            <td>{{us.salary}}</td>
+            <td>{{us.birhtDay | date}}</td>
+            <td>{{us.workDay | date}}</td>
+            <td>{{us.depName}}</td>
+            <div>
+                <button type="button" class="btn-close" aria-label="Close" (click)="delete(us.id)"></button>
+                <!-- <button (click)="update(us)" class="btn btn-info">Edit</button> -->
+            </div>
+        </tr>
+    </tbody>
+</table>
+<button (click)="open()" class="btn btn-primary center">Create</button>
+<div class="center">to update double click on record</div>
+<div class="center">to sort select sortype and click on col name</div>

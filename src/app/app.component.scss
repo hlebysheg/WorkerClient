@@ -1,0 +1,22 @@
+a {
+    padding-left: 3rem;
+}
+
+header {
+    flex-grow: 0;
+    /*Запрещаем увеличиваться*/
+    flex-shrink: 0;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /*Ширина на все окно браузера*/
+    height: 100%;
+    position: fixed;
+    .content {
+        flex-grow: 1;
+        // padding: 1rem;
+    }
+}

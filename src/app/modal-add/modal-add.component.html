@@ -1,0 +1,17 @@
+<div class="modal-header">
+    <h4 class="modal-title">Create dictionary</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body">
+    <form [formGroup]="workerForm" (ngSubmit)="sub()">
+        <label>full name</label><input type="text" formControlName="fullName" class="form-control" />
+        <label>salary</label><input type="text" formControlName="salary" class="form-control" />
+        <label>department</label><input type="text" formControlName="depName" class="form-control" />
+        <label>birhtDay</label><input type="date" formControlName="birhtDay" class="form-control" />
+        <label>work start</label><input type="date" formControlName="workDay" class="form-control" />
+        <button [disabled]="workerForm.invalid" class="btn btn-outline-secondary">{{mode}}</button>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
+</div>
